@@ -18,9 +18,9 @@ public class Podometro {
     private final int DOMINGO = 7;
     //atributos
     private String marca; //nombre de la marca
-    private int altura; //en centímetros
+    private double altura; //en centímetros
     private char sexo;    
-    private int longitudZancada; //en centímetros
+    private double longitudZancada; //en centímetros
     
     private int totalPasosLaborables; //nº pasos en laborables
     private int totalPasosSabado; //nº pasos sábado
@@ -35,7 +35,7 @@ public class Podometro {
      * Inicializa el podómetro con la marca indicada por el parámetro.
      * El resto de atributos se ponen a 0 y el sexo, por defecto, es mujer
      */
-    public Podometro(int queMarca) {
+    public Podometro(String queMarca) {
         marca = queMarca;
         altura = 0;
         sexo = MUJER;
@@ -54,9 +54,8 @@ public class Podometro {
      * accesor para la marca
      *  
      */
-    public    getMarca() {
-
-        
+    public String getMarca() {
+        return marca;      
 
     }
 
@@ -70,8 +69,17 @@ public class Podometro {
      *  
      */
     public void configurar(double queAltura, char queSexo) {
-
-        
+        altura = queAltura;
+        sexo = queSexo;
+        if (sexo == MUJER) {
+            longitudZancada = Math.floor(altura * ZANCADA_MUJER);
+        }
+        else if (sexo == HOMBRE) {
+            longitudZancada = Math.ceil(altura * ZANCADA_HOMBRE);
+        }
+        else {
+            System.out.println("Error, sexo no válido");
+        }        
     }
 
      /**

@@ -3,13 +3,33 @@
  * acerca de los pasos, distancia, ..... que una persona (hombre o mujer)
  * ha dado en una semana. 
  * 
- * @author    - pon aquí tu nombre - 
+ * @author    Sara López Vicente 
  * 
  */
 public class Podometro {
-   
+    //constantes
+    private final char HOMBRE = 'H';
+    private final char MUJER = 'M';
     
+    private final double ZANCADA_HOMBRE = 0.45;
+    private final double ZANCADA_MUJER = 0.41;
     
+    private final int SABADO = 6;
+    private final int DOMINGO = 7;
+    //atributos
+    private int marca; //nº pasos
+    private int altura; //en centímetros
+    private char sexo;    
+    private int longitudZancada; //en centímetros
+    
+    private int totalPasosLaborables; //nº pasos en laborables
+    private int totalPasosSabado; //nº pasos sábado
+    private int totalPasosDomingo; //nº pasos domingo
+    private double totalDistanciaSemana; //distancia en km/semana
+    private double totalDistanciaFinSemana; 
+    
+    private int tiempo; //tiempo total en minutos
+    private int caminatasNoche; //nº caminatas a partir de 21h
 
     /**
      * Inicializa el podómetro con la marca indicada por el parámetro.

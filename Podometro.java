@@ -125,7 +125,18 @@ public class Podometro {
      *  
      */
     public void printConfiguracion() {
-        
+        double alturaMts = altura / 100;
+        double longitudZancadaMts = longitudZancada / 100;
+        String queSexo;
+        if (sexo == MUJER) {
+            queSexo = "MUJER";
+        }
+        else {
+            queSexo = "HOMBRE";
+        }
+        System.out.println("Configuración del podómetro\n*********************************"
+            + "Altura: " + alturaMts + " mtos\nSexo: " + queSexo +
+            "\nLongitud zancada: " + longitudZancadaMts + " mtos");
     }
 
     /**

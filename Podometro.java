@@ -146,7 +146,17 @@ public class Podometro {
      * (leer enunciado)
      *  
      */
-    public void printEstadísticas() {
+    public void printEstadisticas() {
+        //revisar
+        String diasMasPasosCaminados;
+        System.out.println("Estadísticas\n*********************************"
+            + "\nDistancia recorrida toda la semana: " + totalDistanciaSemana +
+            " Km\nDistancia recorrida fin de semana: " + totalDistanciaFinSemana
+            + "\n\nNº pasos días laborables: " + totalPasosLaborables +
+            "\nNº pasos SÁBADO: " + totalPasosSabado + "\nNº pasos DOMINGO: " +
+            totalPasosDomingo + "\n\nNº caminatas realizadas a partir de las 21h: "
+            + caminatasNoche + "\n\nTiempo total caminado en la semana: " + tiempo
+            + "\nDía/s con más pasos caminados: " + diasMasPasosCaminados);
 
     }
 

@@ -17,7 +17,7 @@ public class Podometro {
     private final int SABADO = 6;
     private final int DOMINGO = 7;
     //atributos
-    private int marca; //nº pasos
+    private String marca; //nombre de la marca
     private int altura; //en centímetros
     private char sexo;    
     private int longitudZancada; //en centímetros
@@ -35,8 +35,18 @@ public class Podometro {
      * Inicializa el podómetro con la marca indicada por el parámetro.
      * El resto de atributos se ponen a 0 y el sexo, por defecto, es mujer
      */
-    public Podometro() {
-
+    public Podometro(int queMarca) {
+        marca = queMarca;
+        altura = 0;
+        sexo = MUJER;
+        longitudZancada = 0;
+        totalPasosLaborables = 0;
+        totalPasosSabado = 0;
+        totalPasosDomingo = 0;
+        totalDistanciaSemana = 0;
+        totalDistanciaFinSemana = 0;
+        tiempo = 0;
+        caminatasNoche = 0;
          
     }
 

@@ -165,7 +165,17 @@ public class Podometro {
      *  en el que se ha caminado más pasos - "SÁBADO"   "DOMINGO" o  "LABORABLES"
      */
     public String diaMayorNumeroPasos() {
-
+        String diaMasPasos;
+        if (totalPasosLaborables > totalPasosSabado && totalPasosLaborables> totalPasosSabado) {
+            diaMasPasos = "LABORABLES";
+        }
+        else if (totalPasosSabado > totalPasosDomingo) {
+            diaMasPasos = "SÁBADO";
+        }
+        else {
+            diaMasPasos = "DOMINGO";
+        }
+        return diaMasPasos;
     }
 
     /**

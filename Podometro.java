@@ -104,7 +104,7 @@ public class Podometro {
         //al restar lo hace en formato decimal y dará horas erróneas
         int horas = (horaFin - horaInicio) / 100;
         int minutos = (horaFin - horaInicio) % 100;
-        tiempo = horas * 3600 + minutos;
+        tiempo += horas * 60 + minutos;
         
         //caminatas por la noche a partir de las 21;00, entendiendo
         //que pueden comenzar antes de esta hora pero acabar más tarde
@@ -158,15 +158,17 @@ public class Podometro {
      */
     public void printEstadisticas() {
         //revisar
-        
+        int horas = tiempo / 60;
+        int minutos = tiempo % 60;
         System.out.println("Estadísticas\n*********************************"
             + "\nDistancia recorrida toda la semana: " + totalDistanciaSemana +
             " Km\nDistancia recorrida fin de semana: " + totalDistanciaFinSemana
             + " Km" + "\n\nNº pasos días laborables: " + totalPasosLaborables +
             "\nNº pasos SÁBADO: " + totalPasosSabado + "\nNº pasos DOMINGO: " +
             totalPasosDomingo + "\n\nNº caminatas realizadas a partir de las 21h: "
-            + caminatasNoche + "\n\nTiempo total caminado en la semana: " + tiempo +
-            "\nDía/s con más pasos caminados: " + diaMayorNumeroPasos());
+            + caminatasNoche + "\n\nTiempo total caminado en la semana: " + horas +
+            "h. y " + minutos + "m." + "\nDía/s con más pasos caminados: " 
+            + diaMayorNumeroPasos());
 
     }
 

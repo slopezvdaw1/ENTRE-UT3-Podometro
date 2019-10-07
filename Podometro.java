@@ -96,14 +96,14 @@ public class Podometro {
      *   (leer enunciado del ejercicio)
      */
     public void registrarCaminata(int pasos, int dia, int horaInicio,
-    int horaFin) { 
-        //revisar
+    int horaFin) {         
         double distancia = pasos * longitudZancada / 100000;                     
         totalDistanciaSemana += distancia;
-        //calcular las horas caminadas
-        //al restar lo hace en formato decimal y dará horas erróneas
-        int horas = (horaFin - horaInicio) / 100;
-        int minutos = (horaFin - horaInicio) % 100;
+        //calcular las horas caminadas:
+        //para que no reste en formato decimal calculo por separado 
+        //las horas y minutosen horaInicio y horaFin
+        int horas = horaFin / 100 - horaInicio / 100;
+        int minutos = horaFin % 100 - horaInicio % 100;
         tiempo += horas * 60 + minutos;
         
         //caminatas por la noche a partir de las 21;00, entendiendo
@@ -156,8 +156,7 @@ public class Podometro {
      * (leer enunciado)
      *  
      */
-    public void printEstadisticas() {
-        //revisar
+    public void printEstadisticas() {        
         int horas = tiempo / 60;
         int minutos = tiempo % 60;
         System.out.println("Estadísticas\n*********************************"
@@ -167,11 +166,11 @@ public class Podometro {
             "\nNº pasos SÁBADO: " + totalPasosSabado + "\nNº pasos DOMINGO: " +
             totalPasosDomingo + "\n\nNº caminatas realizadas a partir de las 21h: "
             + caminatasNoche + "\n\nTiempo total caminado en la semana: " + horas +
-            "h. y " + minutos + "m." + "\nDía/s con más pasos caminados: " 
-            + diaMayorNumeroPasos());
+            "h. y " + minutos + "m.");
             //el enunciado pide día con mayor número de pasos en este
             //println pero ya aparece en la clase Demo y entonces se repite
-            //2 veces al ejecutar la demo.
+            //2 veces al ejecutar la demo. Así que he eliminado esta parte del código:
+            //+ "\nDía/s con más pasos caminados: " + diaMayorNumeroPasos()
     }
 
     /**

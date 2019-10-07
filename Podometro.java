@@ -47,7 +47,6 @@ public class Podometro {
         totalDistanciaFinSemana = 0;
         tiempo = 0;
         caminatasNoche = 0;
-
     }
 
     /**
@@ -55,8 +54,7 @@ public class Podometro {
      *  
      */
     public String getMarca() {
-        return marca;      
-
+        return marca;
     }
 
     /**
@@ -100,8 +98,8 @@ public class Podometro {
         double distancia = pasos * longitudZancada / 100000;                     
         totalDistanciaSemana += distancia;
         //calcular las horas caminadas:
-        //para que no reste en formato decimal calculo por separado 
-        //las horas y minutosen horaInicio y horaFin
+        //para que no reste en formato decimal, calculo por separado 
+        //las horas y minutos en horaInicio y horaFin
         int horas = horaFin / 100 - horaInicio / 100;
         int minutos = horaFin % 100 - horaInicio % 100;
         tiempo += horas * 60 + minutos;
@@ -125,7 +123,7 @@ public class Podometro {
             case DOMINGO: totalPasosDomingo += pasos;
             totalDistanciaFinSemana += distancia;
         }
-    }
+     }
 
     /**
      * Muestra en pantalla la configuración del podómetro

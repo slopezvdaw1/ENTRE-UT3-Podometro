@@ -97,11 +97,21 @@ public class Podometro {
      */
     public void registrarCaminata(int pasos, int dia, int horaInicio,
     int horaFin) { 
+        //revisar
         double distancia = pasos * longitudZancada / 100000;                     
         totalDistanciaSemana += distancia;
-        tiempo = 0;//no sé
-        caminatasNoche = 0; //tampoco sé
-        //revisar
+        //calcular las horas caminadas
+        //al restar lo hace en formato decimal y dará horas erróneas
+        int horas = (horaFin - horaInicio) / 100;
+        int minutos = (horaFin - horaInicio) % 100;
+        tiempo = horas * 3600 + minutos;
+        
+        //caminatas por la noche a partir de las 21;00, entendiendo
+        //que pueden comenzar antes de esta hora pero acabar más tarde
+        if (horaInicio >= 2100 || horaFin > 2100) {
+            caminatasNoche ++;
+        }
+        
         switch (dia) {
             case 1:
             case 2:

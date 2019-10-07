@@ -169,7 +169,9 @@ public class Podometro {
             + caminatasNoche + "\n\nTiempo total caminado en la semana: " + horas +
             "h. y " + minutos + "m." + "\nDía/s con más pasos caminados: " 
             + diaMayorNumeroPasos());
-
+            //el enunciado pide día con mayor número de pasos en este
+            //println pero ya aparece en la clase Demo y entonces se repite
+            //2 veces al ejecutar la demo.
     }
 
     /**

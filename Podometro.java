@@ -166,7 +166,7 @@ public class Podometro {
             "\nNº pasos SÁBADO: " + totalPasosSabado + "\nNº pasos DOMINGO: " +
             totalPasosDomingo + "\n\nNº caminatas realizadas a partir de las 21h: "
             + caminatasNoche + "\n\nTiempo total caminado en la semana: " + tiempo +
-            "\nDía/s con más pasos caminados: " + "diasMasPasosCaminados");
+            "\nDía/s con más pasos caminados: " + diaMayorNumeroPasos());
 
     }
 

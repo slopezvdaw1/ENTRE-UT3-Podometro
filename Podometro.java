@@ -104,8 +104,7 @@ public class Podometro {
         int minutos = horaFin % 100 - horaInicio % 100;
         tiempo += horas * 60 + minutos;
         
-        //caminatas por la noche a partir de las 21;00, entendiendo
-        //que pueden comenzar antes de esta hora pero acabar más tarde
+        //caminatas por la noche *empezadas* a partir de las 21;00
         if (horaInicio > 2100) {
             caminatasNoche ++;
         }

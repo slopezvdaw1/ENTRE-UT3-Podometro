@@ -29,7 +29,7 @@ public class Podometro {
     private double totalDistanciaFinSemana; 
 
     private int tiempo; //tiempo total en minutos
-    private int caminatasNoche; //nº caminatas a partir de 21h
+    private int caminatasNoche; //nº caminatas *empezadas* a partir de 21h
 
     /**
      * Inicializa el podómetro con la marca indicada por el parámetro.
@@ -106,7 +106,7 @@ public class Podometro {
         
         //caminatas por la noche a partir de las 21;00, entendiendo
         //que pueden comenzar antes de esta hora pero acabar más tarde
-        if (horaInicio >= 2100 || horaFin > 2100) {
+        if (horaInicio > 2100) {
             caminatasNoche ++;
         }
         
